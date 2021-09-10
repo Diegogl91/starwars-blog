@@ -1,45 +1,40 @@
 const getState = ({ getStore, getActions, setStore }) => {
-	return {
-		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
-		},
-		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
-			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
+    return {
+        store: {
+            urlCharacters: 'https://www.swapi.tech/api/people',
+            urlPlanets: 'https://www.swapi.tech/api/planets',
+            urlStarships:'https://www.swapi.tech/api/Starships',
+            characters: null,
+            planet:null,
+            starship:null,
+           
+        },
+        actions: {
+            getCharacters: () => {
+                const {urlCharacters}  = getStore();
+                fetch(urlCharacters)
+                    .then((response) => response.json())
+                    .then(data => {setStore({ charactes: data })
+                    console.log(data)}
+                    );
+            },
 
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
+            getPlanets: () => {
+                const {urlPlanets}  = getStore();
+                fetch(urlPlanets)
+                    .then((response) => response.json())
+                    .then(data => setStore({ planet: data }));
+            },
 
-				//reset the global store
-				setStore({ demo: demo });
-			}
-		}
-	};
-};
+            getStarships: () => {
+                const {urlStarships}  = getStore();
+                fetch(urlStarships)
+                    .then((response) => response.json())
+                    .then(data => setStore({ starship: data }));
+            },
+            
+        }
+    }
+}
 
 export default getState;
