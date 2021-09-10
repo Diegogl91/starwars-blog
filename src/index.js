@@ -1,10 +1,10 @@
 import React from 'react';
-import reactDom from 'react-dom';
+import ReactDOM from 'react-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@popperjs/core';
 import 'bootstrap/dist/js/bootstrap.bundle';
 
-import Layout from './Layout';
+import Layout from './components/Layout';
 
-ReactDOm.render(<Layout />,document.querySelector('#root'));
+ReactDOM.render(<Layout />,document.querySelector('#root'));
