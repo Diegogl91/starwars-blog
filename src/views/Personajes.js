@@ -3,6 +3,7 @@ import { Context } from '../store/appContext';
 
 const Personajes = () => {
     const { store, actions } = useContext(Context);
+    console.log(store.characters)
     
     return (
         <div className="container">

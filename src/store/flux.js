@@ -3,36 +3,38 @@ const getState = ({ getStore, getActions, setStore }) => {
         store: {
             urlCharacters: 'https://www.swapi.tech/api/people',
             urlPlanets: 'https://www.swapi.tech/api/planets',
-            urlStarships:'https://www.swapi.tech/api/Starships',
+            urlStarships: 'https://www.swapi.tech/api/Starships',
             characters: null,
-            planet:null,
-            starship:null,
-           
+            planet: null,
+            starship: null,
+
         },
         actions: {
             getCharacters: () => {
-                const {urlCharacters}  = getStore();
+                const { urlCharacters } = getStore();
                 fetch(urlCharacters)
                     .then((response) => response.json())
-                    .then(data => {setStore({ charactes: data })
-                    console.log(data)}
+                    .then(data => {
+                        setStore({characters: data})
+                        console.log(data)
+                    }
                     );
             },
 
             getPlanets: () => {
-                const {urlPlanets}  = getStore();
+                const { urlPlanets } = getStore();
                 fetch(urlPlanets)
                     .then((response) => response.json())
                     .then(data => setStore({ planet: data }));
             },
 
             getStarships: () => {
-                const {urlStarships}  = getStore();
+                const { urlStarships } = getStore();
                 fetch(urlStarships)
                     .then((response) => response.json())
                     .then(data => setStore({ starship: data }));
             },
-            
+
         }
     }
 }
