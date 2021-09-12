@@ -10,7 +10,6 @@ const Descripcion = () => {
     const { charactersDesc } = store;
     console.log("desc", charactersDesc)
 
-
     useEffect(async () => {
 
         const { getCharactersDesc } = actions;
@@ -19,7 +18,8 @@ const Descripcion = () => {
     }, [])
     return (
         <div className="container">
-            <div className="title">Star Wars Characters</div>
+            <br />
+            <div className="title"></div>
             <div className="row">
                 {
                     charactersDesc === null ? (
@@ -29,12 +29,13 @@ const Descripcion = () => {
                     ) : (
                         <div className="container">
                             <div className="row">
-                                <div className="col-md-12 text-center">
-
+                                <div className="col-md-12 ">
                                     <h2>{charactersDesc.properties.name}</h2>
-                                    <h2></h2>
-                                    <h2></h2>
-
+                                    <p>Peso: {charactersDesc.properties.height}</p>
+                                    <p>Color de Cabello: {charactersDesc.properties.hair_color}</p>
+                                    <p>Color de Ojos: {charactersDesc.properties.eye_color}</p>
+                                    <p>Fecha de nacimiento: {charactersDesc.properties.birth_year}</p>
+                                    <p>Descripcion: {charactersDesc.description}</p>
                                 </div>
                             </div>
                         </div>
