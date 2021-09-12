@@ -6,7 +6,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             urlPlanets: 'https://www.swapi.tech/api/planets',
             urlPlanetsDesc: 'https://www.swapi.tech/api/planets/',
             urlStarships: 'https://www.swapi.tech/api/starships',
-            urlStarships: 'https://www.swapi.tech/api/starships',
+            urlStarshipsDesc: 'https://www.swapi.tech/api/starships/',
             characters: null,
             charactersDesc: null,
             planets: null,

@@ -10,6 +10,7 @@ import Home from './views/Home';
 import NotFound from './views/NotFound';
 import Descripcion from './views/Descripcion';
 import DescripcionPlanetas from './views/DescripcionPlanetas';
+import DescripcionNaves from './views/DescripcionNaves';
 
 
 const Layout = () => {
@@ -19,9 +20,10 @@ const Layout = () => {
             <Switch>
                 <Route exact path="/personajes" component={Personajes} />
                 <Route exact path="/personaje/:uid" component={Descripcion} />
-                <Route exact path="/naves" component={Naves} />
                 <Route exact path="/planetas" component={Planetas} />
                 <Route exact path="/planeta/:uid" component={DescripcionPlanetas} />
+                <Route exact path="/naves" component={Naves} />
+                <Route exact path="/naves/:uid" component={DescripcionNaves} />
                 <Route exact path="/" component={Home} />
                 <Route component={NotFound} />
             </Switch>
