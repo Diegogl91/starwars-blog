@@ -2,7 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
     return {
         store: {
             urlCharacters: 'https://www.swapi.tech/api/people',
-            urlCharactersDesc: 'https://www.swapi.tech/api/people/1',
+            urlCharactersDesc: 'https://www.swapi.tech/api/people/',
             urlPlanets: 'https://www.swapi.tech/api/planets',
             urlStarships: 'https://www.swapi.tech/api/Starships',
             characters: null,
@@ -17,18 +17,20 @@ const getState = ({ getStore, getActions, setStore }) => {
                 fetch(urlCharacters)
                     .then((response) => response.json())
                     .then(data => {
-                        setStore({characters: data})
-                        console.log(data)
+                        const {results} = data;
+                        setStore({characters: results})
+                        
                     }
                     );
             },
-            getCharactersDesc: () => {
+            getCharactersDesc: async (id) => {
                 const { urlCharactersDesc } = getStore();
-                fetch(urlCharactersDesc)
+                fetch(urlCharactersDesc+id)
                     .then((response) => response.json())
                     .then(data => {
-                        console.log(data)
-                        setStore({charactersDesc: data})
+                        const {result} = data;
+                        console.log("results", result)
+                        setStore({charactersDesc: result})
                         
                     }
                     );

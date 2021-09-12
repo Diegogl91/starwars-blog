@@ -1,37 +1,32 @@
 import React, { useContext, useState } from 'react';
 import { Context } from '../store/appContext';
+import { Link, withRouter } from 'react-router-dom';
 
 const Personajes = () => {
     const { store, actions } = useContext(Context);
-    console.log(store.charactersDesc)
+    const { characters } = store;
+    console.log(characters);
+
 
     return (
         <div className="container">
             <div className="title">Star Wars Characters</div>
             <div className="row">
                 {
-                    store.characters === null ? (
+                    characters === null ? (
                         <div className="spinner-grow text-secondary" role="status">
                             <span className="visually-hidden">Loading...</span>
                         </div>
                     ) :
-                        !!store.characters &&
-                        store.characters.results.map((character, index) => {
-                            const { name } = character;
-                            console.log(index)
+                        !!characters &&
+                        characters.map((character, index) => {
+                            const { name, uid } = character;
                             return (
                                 < div className="card mb-3" key={index} >
                                     <div className="row g-0">
                                         <div className="col-md-8">
                                             <div className="card-body">
-                                                <h5 className="card-title">{name}</h5>
-                                                {store.charactersDesc.description.map((descripcion, desindex) => {
-                                                    const { description } = descripcion;
-                                                    return (
-                                                        <p key={desindex}> {description}</p>
-                                                    )
-                                                })
-                                                }
+                                                <Link to={`/personaje/${uid}`}><h5 className="card-title">{name}</h5></Link>
                                             </div>
                                         </div>
                                     </div>
@@ -44,4 +39,4 @@ const Personajes = () => {
     )
 }
 
-export default Personajes;
+export default withRouter(Personajes);

@@ -18,7 +18,6 @@ const injectContext = PassedComponent => {
 
         useEffect(() => {
             state.actions.getCharacters();
-            state.actions.getCharactersDesc();
             state.actions.getPlanets();
             state.actions.getStarships();
         }, [])
