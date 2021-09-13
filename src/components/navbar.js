@@ -16,7 +16,7 @@ const Navbar = () => {
     return (
         <>
             
-            <ul className="nav bg-dark">
+            <ul className="nav justify-content-between bg-dark">
                 <div>
                     <img src={Starwarslogo} className=" logo rounded float-start img-fluid"></img>
                 </div>
@@ -46,7 +46,7 @@ const Navbar = () => {
                         </Link>
                     </li>
                 </div>
-                <div>
+                <div className="nav">
 
                     <li className="nav-item">
                         <div className="dropdown">
@@ -60,7 +60,7 @@ const Navbar = () => {
                                 Favorites
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li className="dropdown-item">Hola</li>
+                               
                                 {favorites.length === 0 ? (
                                     <li className="dropdown-item">
                                         <button className="dropdown-item" type="button">
