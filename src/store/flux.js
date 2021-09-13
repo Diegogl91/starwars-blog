@@ -12,7 +12,9 @@ const getState = ({ getStore, getActions, setStore }) => {
             planets: null,
             planetsDesc: null,
             starships: null, 
-            starshipsDesc: null
+            starshipsDesc: null,
+            favorites:[],
+           
 
         },
         actions: {
@@ -85,7 +87,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 
         }
-    }
+    } 
 }
 
 export default getState;

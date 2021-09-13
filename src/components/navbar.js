@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Context } from '../store/appContext';
 import { Link, withRouter } from 'react-router-dom';
 import { FaHome } from 'react-icons/fa';
 import { IoPlanet } from 'react-icons/io5';
@@ -7,9 +8,15 @@ import Starwarslogo from '../img/logo-stacked.png'
 import "../styles.css";
 
 const Navbar = () => {
+    const { store, actions, setStore } = useContext(Context);
+    const { favorites } = store;
+    console.log("favoritos", favorites);
+
+
     return (
         <>
-            <ul className="nav justify-content-between bg-dark">
+            
+            <ul className="nav bg-dark">
                 <div>
                     <img src={Starwarslogo} className=" logo rounded float-start img-fluid"></img>
                 </div>
@@ -40,6 +47,7 @@ const Navbar = () => {
                     </li>
                 </div>
                 <div>
+
                     <li className="nav-item">
                         <div className="dropdown">
                             <button
@@ -52,11 +60,34 @@ const Navbar = () => {
                                 Favorites
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li>
-                                    <a className="dropdown-item" href="#">
-                                        Action
-                                    </a>
-                                </li>
+                                <li className="dropdown-item">Hola</li>
+                                {favorites.length === 0 ? (
+                                    <li className="dropdown-item">
+                                        <button className="dropdown-item" type="button">
+                                            No Favorites
+                                        </button>
+                                    </li>
+                                ) : (
+                                    favorites.map((t, index) => {
+                                        return (
+
+                                            <li className="favorites dropdown-item" key={index}>
+                                                <p>{t.name}</p>
+                                                <button
+                                                    className="boton"
+                                                    onClick={() => {
+                                                        favorites.splice(index, 1);
+                                                        setStore([...favorites]);
+
+
+                                                    }}>
+                                                    <i className="fas fa-times"></i>
+                                                </button>
+                                            </li>
+
+                                        );
+                                    })
+                                )}
                             </ul>
                         </div>
 

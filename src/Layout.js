@@ -26,7 +26,7 @@ const Layout = () => {
                 <Route exact path="/naves/:uid" component={DescripcionNaves} />
                 <Route exact path="/" component={Home} />
                 <Route component={NotFound} />
-            </Switch>
+            </Switch> 
             <Footer />
         </BrowserRouter>
     )
