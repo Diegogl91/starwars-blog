@@ -21,12 +21,13 @@ const Naves = () => {
                         !!starships &&
                         starships.map((starship, index) => {
                             const { name, uid } = starship;
+                            const link = `/naves/${uid}`
                             return (
                                 < div className="card mb-3" key={index} >
                                     <div className="row g-0">
                                         <div className="col-md-8">
                                             <div className="card-body">
-                                                <Link to={`/naves/${uid}`}><h5 className="card-title">{name}</h5></Link>
+                                                <Link to={link}><h5 className="card-title">{name}</h5></Link>
                                             </div>
                                         </div>
                                     </div>

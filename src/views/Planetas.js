@@ -21,12 +21,13 @@ const Planetas = () => {
                         !!planets &&
                         planets.map((planet, index) => {
                             const { name, uid } = planet;
+                            const link = `/planeta/${uid}`
                             return (
                                 < div className="card mb-3" key={index} >
                                     <div className="row g-0">
                                         <div className="col-md-8">
                                             <div className="card-body">
-                                                <Link to={`/planeta/${uid}`}><h5 className="card-title">{name}</h5></Link>
+                                                <Link to={link}><h5 className="card-title">{name}</h5></Link>
                                             </div>
                                         </div>
                                     </div>

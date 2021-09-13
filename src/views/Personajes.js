@@ -9,8 +9,9 @@ import { Button } from 'bootstrap';
 const Personajes = () => {
     const { store, actions, setStore } = useContext(Context);
     const { characters, favorites } = store;
+    const { updateFavorites} = actions;
     console.log(characters);
-
+    
 
     return (
         <div className="container">
@@ -25,6 +26,7 @@ const Personajes = () => {
                         !!characters &&
                         characters.map((character, index) => {
                             const { name, uid } = character;
+                            const link = `/personaje/${uid}`;
                             return (
                                 <div className="card mb-3" key={index} style={{ maxWidth: 540 }}>
                                     <div className="row g-0">
@@ -34,10 +36,13 @@ const Personajes = () => {
                                         <div className="col-md-8">
                                             <div className="card-body">
                                                 <h5 className="card-title">{name}</h5> <br />
-                                                <Link to={`/personaje/${uid}`} class="btn btn-primary">Learn more!!</Link>
+                                                <Link to={link} class="btn btn-primary">Learn more!!</Link>
                                             </div>
                                             <div>
-                                                <button type="button" class="btn btn-outline-warning" onClick={() => { setStore(favorites) }}><i class="far fa-heart"></i></button>
+                                                <button type="button" class="btn btn-outline-warning" onClick={() => { 
+                                                    updateFavorites(name,link)
+                                                    
+                                                    }}><i class="far fa-heart"></i></button>
                                             </div>
                                         </div>
                                     </div>

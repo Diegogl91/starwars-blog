@@ -10,6 +10,7 @@ import "../styles.css";
 const Navbar = () => {
     const { store, actions, setStore } = useContext(Context);
     const { favorites } = store;
+    const { deleteFavorite} = actions;
     console.log("favoritos", favorites);
 
 
@@ -72,12 +73,11 @@ const Navbar = () => {
                                         return (
 
                                             <li className="favorites dropdown-item" key={index}>
-                                                <p>{t.name}</p>
+                                                <Link to={t.link}><p>{t.name}</p></Link>
                                                 <button
                                                     className="boton"
                                                     onClick={() => {
-                                                        favorites.splice(index, 1);
-                                                        setStore([...favorites]);
+                                                        deleteFavorite(index)
 
 
                                                     }}>

@@ -11,10 +11,10 @@ const getState = ({ getStore, getActions, setStore }) => {
             charactersDesc: null,
             planets: null,
             planetsDesc: null,
-            starships: null, 
+            starships: null,
             starshipsDesc: null,
-            favorites:[],
-           
+            favorites: [],
+
 
         },
         actions: {
@@ -82,12 +82,22 @@ const getState = ({ getStore, getActions, setStore }) => {
                     }
                     );
             },
+            updateFavorites: (name, link) => {
+                const { favorites } = getStore();
+                favorites.push({ name, link })
+                setStore({ favorites: [...favorites] })
+            },
+            deleteFavorite: (index) =>{
+                const { favorites } = getStore();
+                favorites.splice(index, 1);
+                setStore({ favorites: [...favorites] })
+            }
 
 
 
 
         }
-    } 
+    }
 }
 
 export default getState;
