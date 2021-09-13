@@ -9,8 +9,7 @@ import { Button } from 'bootstrap';
 const Personajes = () => {
     const { store, actions, setStore } = useContext(Context);
     const { characters, favorites } = store;
-    const { updateFavorites} = actions;
-    console.log(characters);
+    const { updateFavorites } = actions;
     
 
     return (
@@ -37,12 +36,10 @@ const Personajes = () => {
                                             <div className="card-body">
                                                 <h5 className="card-title">{name}</h5> <br />
                                                 <Link to={link} class="btn btn-primary">Learn more!!</Link>
-                                            </div>
-                                            <div>
-                                                <button type="button" class="btn btn-outline-warning" onClick={() => { 
-                                                    updateFavorites(name,link)
-                                                    
-                                                    }}><i class="far fa-heart"></i></button>
+                                                <button type="button" class="btn btn-outline-warning" onClick={() => {
+                                                    updateFavorites(name, link)
+                                                }}><i class="far fa-heart"></i>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
