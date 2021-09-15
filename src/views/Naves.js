@@ -13,7 +13,9 @@ const Naves = () => {
 
     return (
         <div className="container">
-            <div className="title">Star Wars starships</div>
+            <br />
+            <div className="title text-light">Star Wars starships</div><br />
+            <span></span>
             <div className="row">
                 {
                     starships === null ? (
@@ -26,12 +28,10 @@ const Naves = () => {
                             const { name, uid } = starship;
                             const link = `/naves/${uid}`
                             return (
-                                < div className="card mb-3" key={index} >
-                                    <div className="row g-0">
-                                        <div className="col-md-4">
-                                            <img src={Starwarslogo} className="logo img-fluid rounded-start bg-dark" />
-                                        </div>
-                                        <div className="col-md-8">
+                                < div className="col-md-6 mb-3" key={index} >
+                                    <div className="card mb-3">
+                                        <div className="row align-items-center justify-content-center g-0">
+                                            <img src={Starwarslogo} className="img-fluid rounded-start bg-dark" />
                                             <div className="card-body">
                                                 <h5 className="card-title">{name}</h5> <br />
                                                 <Link to={link} class="btn btn-primary">Learn more!!</Link>
