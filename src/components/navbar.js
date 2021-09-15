@@ -17,9 +17,9 @@ const Navbar = () => {
     return (
         <>
             
-            <ul className="nav justify-content-between bg-dark">
+            <ul className="nav justify-content-between bg-dark align-content-center">
                 <div>
-                    <img src={Starwarslogo} className=" logo rounded float-start img-fluid"></img>
+                    <img src={Starwarslogo} className=" logo rounded float-start img-fluid "></img>
                 </div>
                 <div className="nav ">
                     <li className="nav-item">
@@ -47,7 +47,7 @@ const Navbar = () => {
                         </Link>
                     </li>
                 </div>
-                <div className="nav">
+                <div className="nav align-content-center me-2">
 
                     <li className="nav-item">
                         <div className="dropdown">
@@ -58,7 +58,7 @@ const Navbar = () => {
                                 data-bs-toggle="dropdown"
                                 aria-expanded="false"
                             >
-                                Favorites
+                                Favorites<span class="badge bg-secondary">{favorites.length}</span>
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                
