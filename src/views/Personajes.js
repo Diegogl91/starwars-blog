@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Context } from '../store/appContext';
 import { Link, withRouter } from 'react-router-dom';
 import Starwarslogo from '../img/logo-stacked.png'
-import {images} from '../img/index';
+import {imgCharacter} from '../img/index';
 import "../styles.css";
 import { Button } from 'bootstrap';
 
@@ -31,11 +31,10 @@ const Personajes = () => {
                             const { name, uid } = character;
                             const link = `/personaje/${uid}`;
                             return (
-                                <div className="col-md-6 mb-3" key={index}>
+                                <div className="col-lg-4 col-md-12 mb-3" key={index}>
                                     <div className="card mb-3">
                                         <div className="row align-items-center justify-content-center g-0">
-                                            <div className="imagen" style={{backgroundImage:`url(${images[uid]})`}}>
-                                            
+                                            <div className="imagen" style={{backgroundImage:`url(${imgCharacter[uid]})`}}>
                                             </div>
                                             <div className="card-body">
                                                 <h5 className="card-title">{name}</h5> <br />

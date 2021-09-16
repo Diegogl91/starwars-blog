@@ -10,14 +10,16 @@ import "../styles.css";
 const Navbar = () => {
     const { store, actions, setStore } = useContext(Context);
     const { favorites } = store;
-    const { deleteFavorite} = actions;
+    const { deleteFavorite } = actions;
     console.log("favoritos", favorites);
 
 
     return (
         <>
-            
-            <ul className="nav justify-content-between bg-dark align-content-center">
+
+
+
+            <ul className="navbar justify-content-between bg-dark align-content-center">
                 <div>
                     <img src={Starwarslogo} className=" logo rounded float-start img-fluid "></img>
                 </div>
@@ -47,6 +49,7 @@ const Navbar = () => {
                         </Link>
                     </li>
                 </div>
+
                 <div className="nav align-content-center me-2">
 
                     <li className="nav-item">
@@ -61,7 +64,7 @@ const Navbar = () => {
                                 Favorites<span class="badge bg-secondary">{favorites.length}</span>
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                               
+
                                 {favorites.length === 0 ? (
                                     <li className="dropdown-item">
                                         <button className="dropdown-item" type="button">
@@ -93,10 +96,21 @@ const Navbar = () => {
 
                     </li>
                 </div>
-
             </ul>
+
+
+
+
+
         </>
     )
 }
 
 export default withRouter(Navbar);
+
+
+
+//dropdown
+
+
+//nav 

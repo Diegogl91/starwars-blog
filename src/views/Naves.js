@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Context } from '../store/appContext';
 import { Link, withRouter } from 'react-router-dom';
-import Starwarslogo from '../img/logo-stacked.png'
+import { imgPlanets, imgShips } from '../img/index';
 
 const Naves = () => {
     const { store, actions } = useContext(Context);
@@ -31,7 +31,8 @@ const Naves = () => {
                                 < div className="col-md-6 mb-3" key={index} >
                                     <div className="card mb-3">
                                         <div className="row align-items-center justify-content-center g-0">
-                                            <img src={Starwarslogo} className="img-fluid rounded-start bg-dark" />
+                                            <div className="imagen bg-dark" style={{ backgroundImage: `url(${imgShips[uid]})` }}>
+                                            </div>
                                             <div className="card-body">
                                                 <h5 className="card-title">{name}</h5> <br />
                                                 <Link to={link} class="btn btn-primary">Learn more!!</Link>
