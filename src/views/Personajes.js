@@ -17,7 +17,7 @@ const Personajes = () => {
     return (
         <div className="container">
             <br />
-            <div className="title text-light">Star Wars Characters</div>
+            <div className="title text-light"><h1>Star Wars Characters</h1></div>
             <hr />
             <div className="row">
                 {

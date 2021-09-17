@@ -69,6 +69,12 @@ h2{
     font-weight: 600;
     margin-bottom: 40px;
 }
+h1{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    margin-bottom: 2px;
+    color:#DADADA
+}
 
 .card-left p{
     font-family: 'Open Sans', sans-serif;

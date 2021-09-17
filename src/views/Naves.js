@@ -14,8 +14,8 @@ const Naves = () => {
     return (
         <div className="container">
             <br />
-            <div className="title text-light">Star Wars starships</div><br />
-            <span></span>
+            <div className="title text-light"><h1>Star Wars Starships</h1></div>
+            <hr />
             <div className="row">
                 {
                     starships === null ? (

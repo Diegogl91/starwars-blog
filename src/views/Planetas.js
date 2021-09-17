@@ -12,8 +12,8 @@ const Planetas = () => {
     return (
         <div className="container">
             <br />
-            <div className="title text-light">Star Wars Planets</div><br />
-            <span></span>
+            <div className="title text-light"><h1>Star Wars Planets</h1></div>
+            <hr />
             <div className="row">
                 {
                     planets === null ? (
