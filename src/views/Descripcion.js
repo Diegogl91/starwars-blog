@@ -29,7 +29,7 @@ const Descripcion = () => {
                     ) : (
                         <div className="container">
                             <div className="row">
-                                <div className="col-md-12 ">
+                                <div className="col-md-12 text-light ">
                                     <h2>{charactersDesc.properties.name}</h2>
                                     <p>Peso: {charactersDesc.properties.height}</p>
                                     <p>Color de Cabello: {charactersDesc.properties.hair_color}</p>

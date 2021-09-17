@@ -17,8 +17,8 @@ const Personajes = () => {
     return (
         <div className="container">
             <br />
-            <div className="title text-light">Star Wars Characters</div><br />
-            <span></span>
+            <div className="title text-light">Star Wars Characters</div>
+            <hr />
             <div className="row">
                 {
                     characters === null ? (
@@ -38,11 +38,13 @@ const Personajes = () => {
                                             </div>
                                             <div className="card-body">
                                                 <h5 className="card-title">{name}</h5> <br />
-                                                <Link to={link} class="btn btn-primary">Learn more!!</Link>
+                                                <div className="d-flex justify-content-between">
+                                                <Link to={link} class="btn btn-outline-primary">Learn more!!</Link>
                                                 <button type="button" class="btn btn-outline-warning" onClick={() => {
                                                     updateFavorites(name, link)
                                                 }}><i class="far fa-heart"></i>
                                                 </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

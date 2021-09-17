@@ -28,7 +28,7 @@ const Naves = () => {
                             const { name, uid } = starship;
                             const link = `/naves/${uid}`
                             return (
-                                < div className="col-md-6 mb-3" key={index} >
+                                < div className="col-md-4 mb-3" key={index} >
                                     <div className="card mb-3">
                                         <div className="row align-items-center justify-content-center g-0">
                                             <div className="imagen bg-dark" style={{ backgroundImage: `url(${imgShips[uid]})` }}>

@@ -9,9 +9,9 @@ import r5 from './personaje/8.jpg';
 import biggs from './personaje/9.png';
 import obi from './personaje/10.jpg';
 
-import tatoo from './planeta/1.jpg'
+import tatoo from './planeta/1.png'
 import aldee from './planeta/2.jpg'
-import yavin from './planeta/3.png'
+import yavin from './planeta/3.jpg'
 import hoth from './planeta/4.png'
 import dago from './planeta/5.jpg'
 import bespin from './planeta/6.png'
@@ -23,12 +23,12 @@ import kamino from './planeta/10.jpg'
 import cr90 from './nave/2.jpg'
 import destr from './nave/3.jpg'
 import sentinel from './nave/5.jpg'
-import ds from './nave/9.jpg'
-import ywing from './nave/11.jpeg'
+import ds from './nave/9.png'
+import ywing from './nave/11.jpg'
 import halcon from './nave/10.jpg'
-import tie from './nave/13.jpg'
+import tie from './nave/13.png'
 import exec from './nave/15.jpg'
-import xwing from './nave/12.jpg'
+import xwing from './nave/12.png'
 import gr75 from './nave/17.jpg'
 
 
