@@ -87,3 +87,15 @@ h2{
     padding-right: 0px;
     position: fixed;
 }
+
+.link{
+    text-decoration: none;
+    margin-bottom: 0;
+    margin-right: 5px;
+}
+
+.boton{
+    background: none; 
+    border: none;
+    color: rgb(241, 107, 107);
+}

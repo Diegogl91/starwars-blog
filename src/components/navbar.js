@@ -50,7 +50,7 @@ const Navbar = () => {
                     </li>
                 </div>
 
-                <div className="nav align-content-center me-2">
+                <div className="nav align-content-center me-4">
 
                     <li className="nav-item">
                         <div className="dropdown">
@@ -63,7 +63,7 @@ const Navbar = () => {
                             >
                                 Favorites<span class="badge bg-secondary">{favorites.length}</span>
                             </button>
-                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
 
                                 {favorites.length === 0 ? (
                                     <li className="dropdown-item">
@@ -75,8 +75,8 @@ const Navbar = () => {
                                     favorites.map((t, index) => {
                                         return (
 
-                                            <li className="favorites dropdown-item" key={index}>
-                                                <Link to={t.link}><p>{t.name}</p></Link>
+                                            <li className="favorites dropdown-item d-flex align-text-center" key={index}>
+                                                <Link className="link" to={t.link}><p className="link">{t.name}</p></Link>
                                                 <button
                                                     className="boton"
                                                     onClick={() => {
