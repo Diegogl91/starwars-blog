@@ -33,11 +33,13 @@ const Planetas = () => {
                                             </div>
                                             <div className="card-body">
                                             <h5 className="card-title">{name}</h5> <br />
-                                                <Link to={link} class="btn btn-primary">Learn more!!</Link>
+                                                <div className="d-flex justify-content-between">
+                                                <Link to={link} class="btn btn-outline-primary">Learn more!!</Link>
                                                 <button type="button" class="btn btn-outline-warning" onClick={() => {
                                                     updateFavorites(name, link)
                                                 }}><i class="far fa-heart"></i>
                                                 </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

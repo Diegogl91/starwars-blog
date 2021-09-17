@@ -31,6 +31,16 @@ body{
     transition: background-size 0.5s ease-in;
 }
 
+.imagenDescrip{
+
+    width: 400px;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
 hr{
     color:white;
     height: 2px !important;
@@ -40,6 +50,31 @@ hr{
     transition: background-size 0.5s ease-out;
    
 }
+.desc {
+    flex-direction: row;
+    padding-right: 0;
+    padding-left: 0;background: #292828;
+}
+.card-left{
+    padding-top: 20px;
+    padding-left: 20px;
+    
+    color:#DADADA;
+}
+h5{
+    color:#DADADA;
+}
+h2{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.card-left p{
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom:10px ;
+}
+    
 .navbar{
     position: fixed;
     top: 0;

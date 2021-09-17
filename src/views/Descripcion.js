@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { Context } from '../store/appContext';
 import { useParams } from 'react-router-dom';
+import { imgCharacter } from '../img/index';
 
 
 
@@ -28,14 +29,21 @@ const Descripcion = () => {
                         </div>
                     ) : (
                         <div className="container">
-                            <div className="row">
-                                <div className="col-md-12 text-light ">
-                                    <h2>{charactersDesc.properties.name}</h2>
-                                    <p>Peso: {charactersDesc.properties.height}</p>
-                                    <p>Color de Cabello: {charactersDesc.properties.hair_color}</p>
-                                    <p>Color de Ojos: {charactersDesc.properties.eye_color}</p>
-                                    <p>Fecha de nacimiento: {charactersDesc.properties.birth_year}</p>
-                                    <p>Descripcion: {charactersDesc.description}</p>
+                            <div className="row d-flex justify-content-center">
+                                <div className="card desc col-sm-8 rounded d-flex justify-content-between">
+                                    <div className="card-left">
+                                        <h2>{charactersDesc.properties.name}</h2>
+                                        <p>Height: {charactersDesc.properties.height}</p>
+                                        <p>Mass: {charactersDesc.properties.mass}</p>
+                                        <p>Skin color: {charactersDesc.properties.skin_color}</p>
+                                        <p>Hair color: {charactersDesc.properties.hair_color}</p>
+                                        <p>Gender: {charactersDesc.properties.gender}</p>
+                                        <p>Eyes color: {charactersDesc.properties.eye_color}</p>
+                                        <p>Birth year: {charactersDesc.properties.birth_year}</p>
+                                        <p>Description: {charactersDesc.description}</p>
+                                    </div>
+
+                                    <div className="imagenDescrip" style={{ backgroundImage: `url(${imgCharacter[uid]})` }}></div>
                                 </div>
                             </div>
                         </div>
